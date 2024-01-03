@@ -1,0 +1,22 @@
+@import url('./reset.css');
+
+body {
+    font-size: 16px;
+    color: #ffffff ;
+    background-color: #10192f; /* 深灰色或黑色 */
+    font-family: Avenir, Helvetica, Arial, sans-serif;; /* 字体选择 */
+}
+
+@media screen and  (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+#app {
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 auto;
+
+}
