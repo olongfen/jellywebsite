@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import {inject} from "vue";
 
+const word = inject('LOGO_FIRST_WORD')
 </script>
 
 <template>
@@ -7,8 +9,8 @@
   <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
     <!-- 外边框渐变效果 -->
     <linearGradient id="outerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#29a9df;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#244399;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:var(--tcolor);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:var(--text-color);stop-opacity:1" />
     </linearGradient>
 
     <!-- 炫酷的多边形，颜色：外边框渐变 -->
@@ -21,7 +23,7 @@
     </radialGradient>
 
     <!-- 字母 "J"，颜色：内部渐变效果 -->
-    <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle" font-family="Arial" font-size="30" fill="url(#innerGradient)" class="hover-effect">J</text>
+    <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle" font-family="Arial" font-size="30" fill="url(#innerGradient)" class="hover-effect">{{word}}</text>
 
     <!-- 阴影效果 -->
     <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">

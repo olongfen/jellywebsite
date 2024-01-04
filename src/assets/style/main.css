@@ -1,22 +1,31 @@
 @import url('./reset.css');
+@import url('./var.css');
 
 body {
     font-size: 16px;
-    color: #ffffff ;
-    background-color: #10192f; /* 深灰色或黑色 */
+    line-height: 1.5;
+    color: var(--text-color); ;
+    background-color: var(--bg-color); /* 背景色 */
     font-family: Avenir, Helvetica, Arial, sans-serif;; /* 字体选择 */
+    p  {
+        margin-bottom: 1.5rem;
+    }
+    padding: 0 6.25rem;
 }
 
 @media screen and  (max-width: 600px) {
     body {
         font-size: 14px;
+        padding: 0;
     }
 }
 
 #app {
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0 auto;
+    .icon {
+        fill: var(--tcolor);
+    }
 
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Logo from "@/components/Icons/Logo.vue";
+import Logo from "@/components/Icons/IconLogo.vue";
 </script>
 
 <template>
@@ -12,10 +12,10 @@ import Logo from "@/components/Icons/Logo.vue";
 <!--    菜单列表-->
     <div class="menu-container">
       <ul class="menu-list">
-        <li class="menu"><a href="about"> About </a></li>
-        <li class="menu"><a href="experience"> Experience</a></li>
-        <li class="menu"><a href="work">Work </a></li>
-        <li class="menu"><a href="contact"> Contact</a></li>
+        <li class="menu"><a href="#about"> About </a></li>
+        <li class="menu"><a href="#experience"> Experience</a></li>
+        <li class="menu"><a href="#work">Work </a></li>
+        <li class="menu"><a href="#contact"> Contact</a></li>
       </ul>
       <div class="resume"><a  href="resume">Resume</a></div>
     </div>
@@ -26,9 +26,11 @@ import Logo from "@/components/Icons/Logo.vue";
 <style scoped lang="less">
 .page-header-wrapper {
   padding: 0 3.125rem; /* 左右边距3.125rem */
-  width: 100%; /* 宽度为100% */
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%; /* 宽度为100% */
   height: 100px; /* 高度为100px */
-  border-bottom: 1px solid #29a9df; /* 底部边框 */
+  border-bottom: 1px solid var(--tcolor); /* 底部边框 */
 }
 .page-header-container {
   display: flex; /* 弹性布局 */
@@ -52,14 +54,14 @@ import Logo from "@/components/Icons/Logo.vue";
   text-align: center;
   margin: 0 1.25rem;
   a:hover {
-    color: #29a9df;
+    color: var(--tcolor);
   }
 }
 .resume {
   width: 7.25rem; /* 宽度为7.25rem */
   margin: 3.125rem 0 ; /* 上下边距3.125rem */
   height: 3.125rem; /* 高度为3.125rem */
-  background:  linear-gradient(to bottom right, #29a9df, #244399);
+  background:  linear-gradient(to bottom right, var(--tcolor), var(--text-color));
   border-radius: 10px; /* 圆角效果，可根据需要调整 */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 初始阴影效果，可根据需要调整 */
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* 动画效果，可根据需要调整 */
