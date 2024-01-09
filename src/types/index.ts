@@ -1,9 +1,12 @@
 
 // 个人信息详情
 interface PersonDetail {
+    id: number
     name: string
     email: string
     introduction: string
+    aboutMeIntroduction: string[]
+    aboutMeSkills: string[]
     age?: number
     phone?: string
     address?: string
@@ -12,11 +15,12 @@ interface PersonDetail {
 
 // 工作经历
 interface JobExperience {
-    time: string
+    startTime: string
+    endTime: string
     position: string
     descriptions: string[]
     company: string
-    url: string
+    companyAddress?: string
 
 }
 
@@ -27,15 +31,23 @@ interface AboutMe {
 }
 
 // 工作项目
-interface Word {
+interface Work {
     name: string
     descriptions: string[]
     skills: string[]
+}
+
+// 定义响应类型
+interface ApiResponse<T> {
+    code: string;
+    data: T;
+    msg: string;
 }
 
 export type {
     PersonDetail,
     JobExperience,
     AboutMe,
-    Word
+    Work,
+    ApiResponse
 }

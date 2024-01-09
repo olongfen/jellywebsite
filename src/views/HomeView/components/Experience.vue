@@ -3,6 +3,7 @@ import {useJobExperienceStore} from "@/stores/jobExperience";
 import IconRightArrow from "@/components/Icons/IconRightArrow.vue";
 
 const workExperience = useJobExperienceStore();
+
 const highlight =(company: string,index: number)=> {
   const timelineItems = document.querySelectorAll('.timeline-item');
   timelineItems.forEach((item, i) => {
@@ -14,8 +15,14 @@ const highlight =(company: string,index: number)=> {
   });
   workExperience.getJobExperience(company)
 }
+
 const getCompanyURL = ()=>{
-  return `${workExperience.jobDetail.url}`
+  if(workExperience.jobDetail?.companyAddress){
+    return `${workExperience.jobDetail?.companyAddress}`
+  }else {
+    return `javascript:void(0);`
+  }
+
 }
 </script>
 
@@ -33,17 +40,17 @@ const getCompanyURL = ()=>{
       </div>
     </li>
   </ul>
-  <div class="experience-detail">
-    <h3 class="head">
-      <span>{{workExperience.jobDetail.position}}</span>
+  <div v-if="workExperience.jobDetail" class="experience-detail">
+    <h3  class="head">
+      <span>{{workExperience.jobDetail?.position}}</span>
       <span class="company">
         &nbsp;@&nbsp;
-      <a :href="getCompanyURL()">{{workExperience.jobDetail.company}}</a>
+      <a :href="getCompanyURL()">{{workExperience.jobDetail?.company}}</a>
       </span>
     </h3>
-    <p class="date">{{workExperience.jobDetail.time}}</p>
+    <p class="date">{{workExperience.jobDetail?.startTime}} &nbsp;-&nbsp; {{workExperience.jobDetail?.endTime}}</p>
     <div class="description-container">
-      <p class="description" v-for="(item,index) in workExperience.jobDetail.descriptions" :key="index">
+      <p class="description" v-for="(item,index) in workExperience.jobDetail?.descriptions" :key="index">
         <icon-right-arrow/>
         <span>{{item}}</span>
       </p>

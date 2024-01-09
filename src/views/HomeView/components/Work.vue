@@ -66,7 +66,7 @@ const workStore = useWorkStore();
 }
 .skill {
   flex: 1 0 20%;
-  color: var(--light-slate);
+  color: var(--text-color);
   min-width: calc(33.33% - 20px); /* 控制每个子项的最小宽度，可以根据需要调整 */
   margin: 10px; /* 设置间距，可以根据需要调整 */
   box-sizing: border-box;

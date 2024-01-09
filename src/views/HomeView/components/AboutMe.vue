@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import {useAboutMeStore} from "@/stores/abountMe";
+import {usePersonDetailStore} from "@/stores/personDetail";
 import RightArrow from "@/components/Icons/IconRightArrow.vue";
-const aboutMe = useAboutMeStore();
+const personDetail = usePersonDetailStore();
 </script>
 
 <template>
 <div class="about-me-container">
-  <p class="introduction" v-for="(item,index) in aboutMe.data.introduction" :key="index">{{item}}<br></p>
+  <p class="introduction" v-for="(item,index) in personDetail.person?.aboutMeIntroduction" :key="index">{{item}}<br></p>
   <div class="skill-container">
-    <div class="skill" v-for="(item,index) in aboutMe.data.skills" :key="index">
+    <div class="skill" v-for="(item,index) in personDetail.person?.aboutMeSkills" :key="index">
       <right-arrow/>
       <span>
       {{item}}

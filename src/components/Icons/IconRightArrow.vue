@@ -28,7 +28,7 @@ if (bodyElement) {
 
 <template>
 <div>
-  <svg t="1704336911470" id ="right-arrow" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="18170" :width="props.width*fontSizeValue" :height="props.height*fontSizeValue" >
+  <svg t="1704336911470" id ="right-arrow" class="icon icon-right-arrow" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="18170" :width="props.width*fontSizeValue" :height="props.height*fontSizeValue" >
     <path d="M288.791335 65.582671l446.41733 446.417329-446.41733 446.417329z" p-id="18171"></path></svg>
 </div>
 </template>
