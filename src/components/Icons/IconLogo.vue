@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {inject} from "vue";
 
-const word = inject('LOGO_FIRST_WORD')
+const word = import.meta.env.VITE_APP_LOGO_FIRST_WORD || "Jelly";
 </script>
 
 <template>

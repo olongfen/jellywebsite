@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "dev": "vite --mode development",
+    "build": "run-p type-check \"build-only {@}\" -- --mode production",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
@@ -16,6 +16,7 @@
     "element-plus": "^2.4.4",
     "moment": "^2.30.1",
     "pinia": "^2.1.7",
+    "vite-plugin-html": "^3.2.1",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
   },

@@ -10,7 +10,7 @@ import 'element-plus/theme-chalk/el-message.css'
 // 封装 Axios 实例
 const createAxiosInstance = (): AxiosInstance => {
     const instance: AxiosInstance = axios.create({
-        baseURL: 'http://127.0.0.1:8818/api',
+        baseURL: import.meta.env.VITE_APP_BASE_URL,
         timeout: 5000,
         headers: {
             'Content-Type': 'application/json',
